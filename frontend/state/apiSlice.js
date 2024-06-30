@@ -1,8 +1,8 @@
 // RTK Query
-import { CreateApi, fakeBaseQuery } from "@reduxjs/toolkit/query"; // imports two key function which are CreateApi and fakeBaseQuery
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; // imports two key function which are CreateApi and fakeBaseQuery
 
 // Create and Exports the API Slice using the CreateApi function with an object that contains our API configuration.
-export const apiSlice = CreateApi({
+export const apiSlice = createApi({
   reducerPath: "api", // The slice name for the reducer
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:9009/api/" }), // The base query function that will be used to send requests to the server (Wrapper for Fetch API)
   tagTypes: ["Orders"], // The tag types that will be used to cache invalidate
