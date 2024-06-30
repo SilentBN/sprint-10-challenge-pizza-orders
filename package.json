@@ -25,7 +25,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.10.0",
     "eslint": "^8.56.0",
-    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react": "^7.34.3",
     "file-loader": "^6.2.0",
     "fkill-cli": "^8.0.0",
     "html-loader": "^5.0.0",
