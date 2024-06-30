@@ -40,13 +40,16 @@ export default function PizzaForm() {
   };
 
   return (
+    // This is the form for entering pizza orders: It has input fields for full name and size, and checkboxes for toppings
     <form onSubmit={handleSubmit}>
       <h2>Pizza Form</h2>
+      {/* These lines render loading and error messages when appropriate. */}
       {isLoading && <div className="pending">Order in progress...</div>}
       {isError && (
         <div className="failure">Order failed: {error.data.message}</div>
       )}
 
+      {/* This is an example of an input field in the form. It's bound to the formData state and uses the handleChange function. */}
       <div className="input-group">
         <div>
           <label htmlFor="fullName">Full Name</label>
@@ -63,6 +66,7 @@ export default function PizzaForm() {
         </div>
       </div>
 
+      {/* This creates a dropdown for selecting pizza size. */}
       <div className="input-group">
         <div>
           <label htmlFor="size">Size</label>
@@ -82,6 +86,7 @@ export default function PizzaForm() {
         </div>
       </div>
 
+      {/* This creates checkbox inputs for each topping option. */}
       <div className="input-group">
         {["Pepperoni", "Green Peppers", "Pineapple", "Mushrooms", "Ham"].map(
           (topping, index) => (
@@ -99,6 +104,8 @@ export default function PizzaForm() {
           )
         )}
       </div>
+
+      {/* This is the submit button for the form. */}
       <input data-testid="submit" type="submit" />
     </form>
   );

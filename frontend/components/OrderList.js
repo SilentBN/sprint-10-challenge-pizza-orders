@@ -35,6 +35,7 @@ export default function OrderList() {
           );
         })}
       </ol>
+      {/* This section renders filter buttons for different sizes. */}
       <div id="sizeFilters">
         Filter by size:
         {["All", "S", "M", "L"].map((size) => {
