@@ -4,19 +4,19 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; // imp
 // Create and Exports the API Slice using the CreateApi function with an object that contains our API configuration.
 export const apiSlice = createApi({
   reducerPath: "api", // The slice name for the reducer
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:9009/api/" }), // The base query function that will be used to send requests to the server (Wrapper for Fetch API)
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:9009/api/pizza/" }), // The base query function that will be used to send requests to the server (Wrapper for Fetch API)
   tagTypes: ["Orders"], // The tag types that will be used to cache invalidate
   // The endpoints that will be used to send requests to the server
   endpoints: (builder) => ({
     // This defines a query endpoint named getOrders: query: () => 'pizza/history' specifies the endpoint path; providesTags: ['Orders'] says this query provides 'Orders' data
     getOrders: builder.query({
-      query: () => "pizza/history",
+      query: () => "history",
       providesTags: ["Orders"],
     }),
     // This defines a mutation endpoint named addOrder: It specifies the URL, method (POST), and that the body of the request should be the order argument
     addOrder: builder.mutation({
       query: (order) => ({
-        url: "pizza/order",
+        url: "order",
         method: "POST",
         body: order,
       }),

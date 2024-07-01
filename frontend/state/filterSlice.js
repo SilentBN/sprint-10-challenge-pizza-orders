@@ -1,14 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit"; // imports the createSlice function from the Redux Toolkit library
 
+const initialState = {
+  size: "All",
+};
+
 // Creates a slice for filter state
-const filterSlice = createSlice({
+export const filterSlice = createSlice({
   name: "filter", // The name of the slice
-  initialState: "All", // The initial state of the slice
+  initialState, // The initial state of the slice
   // Define Reducer Functions
   reducers: {
     // This defines a reducer function named setFilter: state is the current state (in this case, the current filter value) action is the action object dispatched to this reducer action.payload contains the new filter value The function simply returns the new filter value, replacing the old one
     setFilter: (state, action) => {
-      return action.payload;
+      state.size = action.payload;
     },
   },
 });

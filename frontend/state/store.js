@@ -10,8 +10,7 @@ export const resetStore = () =>
       filter: filterSlice, // This adds our filter slice to the store. The key 'filter' will be used to access this slice's state in the store.
     },
     // This configures the middleware for our store: getDefaultMiddleware() returns the default middleware used by Redux Toolkit. We're adding the API slice middleware to this default set using concat. This middleware is necessary for RTK Query to work properly, handling things like caching and invalidation.
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(apiSlice.middleware),
+    middleware: (getDefault) => getDefault().concat(apiSlice.middleware),
   });
 
 export const store = resetStore(); // This creates the actual store instance by calling resetStore(), and exports it so it can be used in our app.
